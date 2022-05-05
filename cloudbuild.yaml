@@ -3,3 +3,5 @@ steps:
   args: ['build', '-t', 'gcr.io/modular-magpie-348711/fluckbook-fontend:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/modular-magpie-348711/fluckbook-fontend:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta','run', 'deploy','modular-magpie-348711','--region=asia-southeast1', '--platform=managed', 'gcr.io/modular-magpie-348711/fluckbook-fontend:$SHORT_SHA']
