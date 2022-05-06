@@ -15,8 +15,8 @@ $(document).ready(() => {
         data = JSON.parse(data)
         console.log(data)
         $('#displayName').text(data.display_name)
-        $("#displayImage").attr("src", "https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/" + data.display_image);
-        $("#displayImage2").attr("src", "https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/" + data.display_image);
+        $("#displayImage").attr("src", data.display_image);
+        $("#displayImage2").attr("src", data.display_image);
     })
 
 

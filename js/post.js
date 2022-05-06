@@ -28,7 +28,7 @@ $(document).ready(() => {
                     <div class="d-flex justify-content-between p-2 px-3">
                       <div class="d-flex flex-row align-items-center">
                         <img
-                          src="https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/${post.owner_post.display_image}"
+                          src="${post.owner_post.display_image}"
                           width="50"
                           class="rounded-circle"
                         />
@@ -37,7 +37,7 @@ $(document).ready(() => {
                         </div>
                       </div>
                     </div>
-                    <img src="https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/${post.image}" class="img-fluid" />
+                    <img src="${post.image}" class="img-fluid" />
                     <div class="p-2">
                       <p class="text-justify">
                         ${post.message}
@@ -70,7 +70,7 @@ $(document).ready(() => {
         data = JSON.parse(data)
         console.log(data)
         $('#displayName').text(data.display_name)
-        $("#displayImage").attr("src","https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/" + data.display_image);
+        $("#displayImage").attr("src", data.display_image);
     })
 });
 
