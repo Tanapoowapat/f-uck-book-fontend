@@ -86,14 +86,14 @@ $(document).ready(() => {
             });
         });
     
-        const url_info = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/user';    
+    const url_info = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/user';    
 
-        let request2 = new Request(url_info, {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer '+token, 
-            },
-        });
+    let request2 = new Request(url_info, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer '+token, 
+        },
+    });
         
     fetch(request2).then((response) => { return response.text() }).then((data) => {
         data = JSON.parse(data)
@@ -103,7 +103,6 @@ $(document).ready(() => {
     })
 });
 
-$("#postForm").submit()
 
 
 

@@ -61,16 +61,16 @@
     <section class="post-sec">
         <div class="post-header">
             <div class="user-image">
-                <img src="assets/img/m44.jpg" title="User Image" alt="didasoff">
+                <img id="displayImage" src="" title="User Image" >
             </div>
             <div class="user-name">
-                <h2>Prayut Janocha</h2>
-                <p><span>@</span>m44</p>
+                <h2 id="displayName"></h2>
             </div>
         </div>
         <div class="post-area">
             <form id="postForm" class="needs-validation" novalidate>
-                <textarea class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
+                <input type="file" id="image" accept="image/png, image/jpeg">
+                <textarea id="message" class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
                 <div class="text-limit-set">
                     <p>Text Limit</p>
                     <p class="text-type-count">300</p>
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <script src="js/post.js"></script>
+    <script src="js/ceraet-post.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     
     <script>
