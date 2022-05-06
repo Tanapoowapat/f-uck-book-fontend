@@ -13,7 +13,8 @@ var forms = document.querySelectorAll('.needs-validation');
                     form.classList.add( 'was-validated' );
               }, false );
             } );
-
+            
 function alert_update(){
+
     alert("รอ อัพเดทนะครับ");
 }
