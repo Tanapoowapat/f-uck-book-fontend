@@ -46,6 +46,7 @@ $('#registerForm').submit((event) => {
     formData.append('password', password);
     formData.append('display_image', input.files[0])
 
+
     const url = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/register';
     
     let request = new Request(url, {

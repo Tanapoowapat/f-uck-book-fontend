@@ -14,9 +14,6 @@ $(document).ready(() => {
     
     fetch(request)
         .then((response) => {
-            // if (response.status != 201) {
-            //     throw new Error("Bad Server Response");
-            // }
             return response.text();
         })
         .then((data) => {

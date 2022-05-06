@@ -23,7 +23,7 @@ $('#postForm').submit((event) => {
 
     event.preventDefault();
 
-    const url_info = 'http://127.0.0.1:5000/post';    
+    const url_info = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/post';    
     var token = localStorage.getItem('token')
 
     let formData = new FormData();
