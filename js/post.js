@@ -1,16 +1,16 @@
 $(document).ready(() => {
 
     console.log(localStorage.getItem('token'))
-     var token = localStorage.getItem('token')
+    var token = localStorage.getItem('token')
      
-        const url = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/post_list';    
-    
-        let request = new Request(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer '+token, 
-            },
-        });
+    const url = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/post_list';    
+
+    let request = new Request(url, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer '+token, 
+        },
+    });
     
     fetch(request)
         .then((response) => {
@@ -21,11 +21,29 @@ $(document).ready(() => {
         })
         .then((data) => {
             data = JSON.parse(data)
-            
-
 
             data.posts.forEach(post => {
                 console.log(data)
+                var comment = ``
+
+                post.comment_list.forEach((data) => {
+                    comment += `
+                    <div class="d-flex flex-row mb-2">
+                    <img
+                    src="${data.owner_comment.profile}"
+                    width="40"
+                    class="rounded-image"
+                    />
+                    <div class="d-flex flex-column ml-2">
+                    <span class="name">${data.owner_comment.username}</span>
+                    <small class="comment-text">${data.message}</small>
+                    <div class="d-flex flex-row align-items-center status">
+                        <small>Like</small> 
+                    </div>
+                    </div>
+                    </div>`
+                })
+
                 var postCard = `<div class="row d-flex align-items-center justify-content-center mt-4">
                 <div class="col-md-6">
                   <div class="card">
@@ -54,7 +72,7 @@ $(document).ready(() => {
                       </div>
                       <hr />
                       <div class="comments">
-                        comments
+                        ${comment}
                         <div class="comment-input">
                           <input type="text" class="form-control" />
                           <div class="fonts"><i class="fa fa-camera"></i></div>
@@ -64,26 +82,30 @@ $(document).ready(() => {
                   </div>
                 </div>
               </div>` 
-              $("#postContainer").append(postCard)
+            $("#postContainer").append(postCard)
             });
         });
-    });
+    
+        const url_info = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/user';    
 
-        var comment = `
-                  <div class="d-flex flex-row mb-2">
-                  <img
-                    src="${comment.profile}"
-                    width="40"
-                    class="rounded-image"
-                  />
-                  <div class="d-flex flex-column ml-2">
-                    <span class="name">${comment.name}</span>
-                    <small class="comment-text">${comment.message}</small>
-                    <div class="d-flex flex-row align-items-center status">
-                      <small>Like</small> 
-                    </div>
-                  </div>
-                </div>`
+        let request2 = new Request(url_info, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer '+token, 
+            },
+        });
+        
+    fetch(request2).then((response) => { return response.text() }).then((data) => {
+        data = JSON.parse(data)
+        console.log(data)
+        $('#displayName').text(data.display_name)
+        $("#displayImage").attr("src","https://f-uck-backend-qy7vmzm5bq-as.a.run.app/image/" + data.display_image);
+    })
+});
+
+$("#postForm").submit()
+
+
 
 
 

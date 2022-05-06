@@ -38,11 +38,13 @@ $('#registerForm').submit((event) => {
     var display_name = $("#display_name").val()
     var username = $("#username").val()
     var password = $("#password").val()
+    var input = document.querySelector('input[type="file"]')
 
     let formData = new FormData();
     formData.append('display_name', display_name);
     formData.append('username', username);
     formData.append('password', password);
+    formData.append('display_image', input.files[0])
 
     const url = 'https://f-uck-backend-qy7vmzm5bq-as.a.run.app/register';
     
