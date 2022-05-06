@@ -26,11 +26,9 @@ $(document).ready(() => {
                   <div class="card">
                     <div class="d-flex justify-content-between p-2 px-3">
                       <div class="d-flex flex-row align-items-center">
-                        <img
-                          src="${post.owner_post.display_image}"
-                          width="50"
-                          class="rounded-circle"
-                        />
+                        <div class="user-image">
+                            <img id="displayImage" src="${post.owner_post.display_image}" title="User Image">
+                        </div>
                         <div class="d-flex flex-column ml-2">
                           <span class="font-weight-bold">${post.owner_post.display_name}</span>
                         </div>
