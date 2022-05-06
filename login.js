@@ -14,6 +14,6 @@ var forms = document.querySelectorAll('.needs-validation');
               }, false );
             } );
 
-function w_update(){
+function alert_update(){
     alert("รอ อัพเดทนะครับ");
 }
