@@ -115,6 +115,15 @@
           border: 2px solid #2f3640;
           padding: 2px;
       }
+
+      .display {
+        height: 50px;
+          width: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 2px solid #2f3640;
+          padding: 2px;
+      }
     </style>
   </head>
 
@@ -157,12 +166,7 @@
                   aria-expanded="false"
                   data-offset="10,20"
                 >
-                  <img
-                    id="displayImage"
-                    src=""
-                    width="50"
-                    class="rounded-circle"
-                  />
+                <img id="displayImage" class="display" src="" title="User Image">
                 </button>
                 <div
                   class="dropdown-menu"
