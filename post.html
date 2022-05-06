@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+      body {
+        background-color: #eee;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+      }
+
+      .card {
+        border: none;
+      }
+
+      .ellipsis {
+        color: #a09c9c;
+      }
+
+      hr {
+        color: #a09c9c;
+        margin-top: 4px;
+        margin-bottom: 8px;
+      }
+
+      .muted-color {
+        color: #a09c9c;
+        font-size: 13px;
+      }
+
+      .ellipsis i {
+        margin-top: 3px;
+        cursor: pointer;
+      }
+
+      .icons i {
+        font-size: 25px;
+      }
+
+      .icons .fa-heart {
+        color: red;
+      }
+
+      .icons .fa-smile-o {
+        color: yellow;
+        font-size: 29px;
+      }
+
+      .rounded-image {
+        border-radius: 50% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+      }
+
+      .name {
+        font-weight: 600;
+      }
+
+      .comment-text {
+        font-size: 12px;
+      }
+
+      .status small {
+        margin-right: 10px;
+        color: blue;
+      }
+
+      .form-control {
+        border-radius: 26px;
+      }
+
+      .comment-input {
+        position: relative;
+      }
+
+      .fonts {
+        position: absolute;
+        right: 13px;
+        top: 8px;
+        color: #a09c9c;
+      }
+
+      .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #8bbafe;
+        outline: 0;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/post.js"></script>
+
+  <body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://cdn.icon-icons.com/icons2/2596/PNG/512/check_one_icon_155665.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        F!uckBook
+      </a>
+
+      <div class="container-fluid">
+        <div
+          class="d-flex justify-content-between p-2 px-3"
+          style="right: 10px; position: absolute"
+        >
+          <div class="d-flex flex-row align-items-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a id="displayName" class="nav-link active" href=""></a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <div class="dropdown mr-1">
+                <button
+                  type="button"
+                  class="btn dropdown-toggle"
+                  id="dropdownMenuOffset"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-offset="10,20"
+                >
+                  <img
+                    id="displayImage"
+                    src=""
+                    width="50"
+                    class="rounded-circle"
+                  />
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuOffset"
+                  style="left: -138px"
+                >
+                  <a
+                    class="dropdown-item"
+                    href=""
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    >Edit Profile</a
+                  >
+                  <a class="dropdown-item" href="/login.html">Logout</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="indicator"></div>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="container-fluid">
+                        <div class="form-group">
+                        <label><strong>Upload Photo</strong></label>
+                        <div class="custom-file">
+                            <input type="file" name="files[]" multiple class="custom-file-input form-control" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose photo</label>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <input type="submit" name="upload" value="Upload" id="upload" class="btn btn-block btn-outline-dark">
+                        </div>
+                    </div>
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div>
+      <button
+        class="btn btn-outline-primary btn-lg px-5"
+        type="submit"
+        onclick="message()"
+      >
+        Message
+      </button>
+    </div>
+
+    <div id="postContainer" class="container mt-5 mb-5">
+
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/post.js"></script>
+
+  </body>
+</html>
