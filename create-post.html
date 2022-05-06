@@ -56,34 +56,40 @@
     </div>
   </nav>
 <!--Nav Bar-->
-    <section class="post-sec">
-        <div class="post-header">
-            <div class="user-image">
-                <img id="displayImage" src="" title="User Image" >
-            </div>
-            <div class="user-name">
-                <h2 id="displayName"></h2>
-            </div>
-        </div>
-        <div class="post-area">
-            <form id="postForm" class="needs-validation" novalidate>
-                <textarea id="message" class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
-                <div class="text-limit-set">
-                    <p>Text Limit</p>
-                    <p class="text-type-count">300</p>
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <section class="post-sec">
+            <div class="post-header">
+                <div class="user-image">
+                    <img id="displayImage" src="" title="User Image" >
                 </div>
-                <div class="mb-3">
-                  <label for="formFile" class="form-label" >Upload Image</label>
-                  <input  class="form-control" type="file" id="image" accept="image/png, image/jpeg" style="height: auto;">
+                <div class="user-name">
+                    <h2 id="displayName"></h2>
                 </div>
-                <div class="post-footer">
-                    <div>
-                        <button type="submit" class="post" title="Post">Post</button>
+            </div>
+            <div class="post-area">
+                <form id="postForm" class="needs-validation" novalidate>
+                    <textarea id="message" class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
+                    <div class="text-limit-set">
+                        <p>Text Limit</p>
+                        <p class="text-type-count">300</p>
                     </div>
-                </div>
-            </form>
-        </div>
-    </section>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label" >Upload Image</label>
+                      <input  class="form-control" type="file" id="image" accept="image/png, image/jpeg" style="height: auto;">
+                    </div>
+                    <div class="post-footer">
+                        <div>
+                            <button type="submit" class="post" title="Post">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+      </div>
+    </div>
+</div>
 
     <script src="js/ceraet-post.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>

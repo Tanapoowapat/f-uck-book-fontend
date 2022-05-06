@@ -21,9 +21,8 @@ $(document).ready(() => {
 
             data.posts.forEach(post => {
                 console.log(data)
-
                 var postCard = `<div class="row d-flex align-items-center justify-content-center mt-4">
-                <div class="col-md-6">
+                <div class="col-12 col-md-12 col-lg-8 col-xl-9">
                   <div class="card">
                     <div class="d-flex justify-content-between p-2 px-3">
                       <div class="d-flex flex-row align-items-center">

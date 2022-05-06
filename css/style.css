@@ -9,14 +9,8 @@ body {
 }
 
 .post-sec {
-    height: fit-content;
-    width: 500px;
     padding: 20px;
     border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
