@@ -24,25 +24,6 @@ $(document).ready(() => {
 
             data.posts.forEach(post => {
                 console.log(data)
-                var comment = ``
-
-                post.comment_list.forEach((data) => {
-                    comment += `
-                    <div class="d-flex flex-row mb-2">
-                    <img
-                    src="${data.owner_comment.profile}"
-                    width="40"
-                    class="rounded-image"
-                    />
-                    <div class="d-flex flex-column ml-2">
-                    <span class="name">${data.owner_comment.username}</span>
-                    <small class="comment-text">${data.message}</small>
-                    <div class="d-flex flex-row align-items-center status">
-                        <small>Like</small> 
-                    </div>
-                    </div>
-                    </div>`
-                })
 
                 var postCard = `<div class="row d-flex align-items-center justify-content-center mt-4">
                 <div class="col-md-6">
@@ -71,13 +52,6 @@ $(document).ready(() => {
                         </div>
                       </div>
                       <hr />
-                      <div class="comments">
-                        ${comment}
-                        <div class="comment-input">
-                          <input type="text" class="form-control" />
-                          <div class="fonts"><i class="fa fa-camera"></i></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
