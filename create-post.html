@@ -69,20 +69,13 @@
             </div>
         </div>
         <div class="post-area">
-            <form action="">
+            <form id="postForm" class="needs-validation" novalidate>
                 <textarea class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
                 <div class="text-limit-set">
                     <p>Text Limit</p>
                     <p class="text-type-count">300</p>
                 </div>
                 <div class="post-footer">
-                    <div>
-                        <ul>
-                            <li><a href="#" title="Image"><i class="far fa-image"></i></a></li>
-                            <li><a href="#" title="Imoj"><i class="far fa-laugh"></i></a></li>
-                            <li><a href="#" title="Location"><i class="fas fa-map-marker-alt"></i></a></li>
-                        </ul>
-                    </div>
                     <div>
                         <button type="submit" class="post" title="Post">Post</button>
                     </div>
@@ -91,7 +84,9 @@
         </div>
     </section>
 
-
+    <script src="js/post.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
     <script>
         function inputCount(val) {
             var len = val.value.length;
